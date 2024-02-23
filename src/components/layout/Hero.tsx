@@ -1,6 +1,8 @@
+
 import Navbar from "./Navbar";
 import { useState} from "react";
 import {PrimaryButton,SecondaryButton} from "../ui/Button";
+import Marquee from "../ui/Marque";
 
 const Hero = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
@@ -18,7 +20,7 @@ const Hero = ()=>{
     return (
         <>
         <Navbar/>
-        <marquee behavior="scroll" direction="left" className="bg-heavyGreen py-2 text-white font-bold text-sm">Last Winner: {"0xcc42724c6683b7e57334c4e856f4c9965ed682bd"} Previous Winnings: {"0.045"}MATIC</marquee>
+        <Marquee>Last Winner: {"0xcc42724c6683b7e57334c4e856f4c9965ed682bd"} Previous Winnings: {"0.045"}MATIC</Marquee>
         <div className="container mx-auto text-white flex flex-col space-y-3 py-2">
             <div className="flex items-center justify-center">
             <div className="p-4 flex flex-col space-y-1 border-white border text-center">
@@ -26,19 +28,19 @@ const Hero = ()=>{
                 <p className="text-md">Total commission to be withdrawn {"0.005"}MATIC </p>
                 <div className="flex space-x-2 p-2">
                    <div className=" w-1/4 border border-white flex flex-col p-2 items-center">
-                   <ion-icon name="star"></ion-icon>
+                   <i className="fas fa-star"></i>
                    <h2>Draw Winner</h2>
                    </div>
                    <div className=" w-1/4 border border-white flex flex-col p-2 items-center">
-                   <ion-icon name="information-circle-outline"></ion-icon>
+                  <i className="fa fa-info-circle"></i>
                    <h2>Withdraw Commission</h2>
                    </div>
                    <div className=" w-1/4 border border-white flex flex-col p-2 items-center">
-                   <ion-icon name="sync-outline"></ion-icon>
+                   <i className="fas fa-refresh"></i>
                    <h2>Restart Draw</h2>
                    </div>
                    <div className=" w-1/4 border border-white flex flex-col p-2 items-center">
-                   <ion-icon name="refresh-outline"></ion-icon>
+                  <i className="fas fa-undo"></i>
                    <h2>Refund All</h2>
                    </div>
                 </div>
