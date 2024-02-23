@@ -4,7 +4,7 @@ import Button,{PrimaryButton,SecondaryButton} from "../ui/Button";
 
 const Hero = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
-  const deadline = "23 Feb 2024 10:30:20 UTC"
+  const deadline = "23 Feb 2024 23:30:20 UTC"
   const time = Date.parse(deadline) - Date.now()
   setTimeout(()=>{
       setTimer(()=>{
