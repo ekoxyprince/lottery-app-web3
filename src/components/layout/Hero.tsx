@@ -48,7 +48,7 @@ const Hero = ()=>{
             </div>
             <div className="flex flex-col space-y-3 md:flex-row md:space-y-0">
                    <div className="w-[100%] md:w-1/2 flex justify-center max-h-[22rem]">
-                    <div className="border border-white flex flex-col p-3 space-y-5">
+                    <div className="min-w-[100%] border border-white flex flex-col p-3 space-y-5">
                     <h2 className="text-4xl font-bold text-center">The Next Draw</h2>
                     <div className="flex space-x-2">
                      <div className="w-1/2 border border-white p-2">
@@ -63,20 +63,20 @@ const Hero = ()=>{
                     <div>
                     <h4 className="font-bold">Time Remaining</h4>
                     <div className="flex p-2 space-x-2">
-                <div className="flex flex-col items-center  max-w-1/3">
-                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col px-12 py-8 items-center">
+                <div className="flex flex-col items-center  w-1/3">
+                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col w-[100%] h-[5rem] md:h-[7rem] justify-center items-center">
                    <h2 className="text-4xl font-bold">{timer.h}</h2>
                    </div>
                    <h2 className="">Hours</h2>
                 </div>
-                <div className="flex flex-col items-center  max-w-1/3">
-                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col px-12 py-8 items-center">
+                <div className="flex flex-col items-center  w-1/3">
+                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col w-[100%] h-[5rem] md:h-[7rem] justify-center items-center">
                    <h2 className="text-4xl font-bold">{timer.m}</h2>
                    </div>
                    <h2 className="">Minutes</h2>
                 </div>
-                <div className="flex flex-col items-center max-w-1/3">
-                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col px-12 py-8 items-center">
+                <div className="flex flex-col items-center w-1/3">
+                   <div className="bg-gradient-to-r from-lightGreen to-heavyGreen border border-white flex flex-col w-[100%] h-[5rem] md:h-[7rem] justify-center items-center">
                    <h2 className="text-4xl font-bold">{timer.s}</h2>
                    </div>
                    <h2 className="">Seconds</h2>
