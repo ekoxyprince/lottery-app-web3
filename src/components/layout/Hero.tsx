@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import { useState} from "react";
-import Button,{PrimaryButton,SecondaryButton} from "../ui/Button";
+import {PrimaryButton,SecondaryButton} from "../ui/Button";
 
 const Hero = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
