@@ -1,6 +1,10 @@
 
+type PrimaryButtonProp = {
+    text:string,
+    onClick:()=>void
+}
 type ButtonProp = {
-    text:string
+    text:string,
 }
 const Button = ({text}:ButtonProp)=>{
    return (
@@ -19,9 +23,9 @@ export const TransparentButton = ({text}:ButtonProp)=>{
     )
 }
 
-export const PrimaryButton = ({text}:ButtonProp)=>{
+export const PrimaryButton = ({text,onClick}:PrimaryButtonProp)=>{
     return(
-        <button className="bg-gradient-to-r from-darkOrange to-heavyGreen px-3 py-2.5 font-bold text-md border-none rounded-md hover:text-lime-400">
+        <button onClick={onClick} className="bg-gradient-to-r from-darkOrange to-heavyGreen px-3 py-2.5 font-bold text-md border-none rounded-md hover:text-lime-400">
             {text}
         </button>
     )

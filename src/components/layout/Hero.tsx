@@ -4,10 +4,10 @@ import { useState} from "react";
 import {PrimaryButton,SecondaryButton} from "../ui/Button";
 import Marquee from "../ui/Marque";
 
-const Hero = ()=>{
+const Hero:React.FC = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
-  const deadline = "23 Feb 2024 23:30:20 UTC"
-  const time = Date.parse(deadline) - Date.now()
+  const deadline:string = "23 Feb 2024 23:30:20 UTC"
+  const time:number = Date.parse(deadline) - Date.now()
   setTimeout(()=>{
       setTimer(()=>{
        return {
@@ -17,6 +17,9 @@ const Hero = ()=>{
        }
       })
      },1000);
+function buyTicket(){
+  alert('Bought')
+}
     return (
         <>
         <Navbar/>
@@ -111,7 +114,7 @@ const Hero = ()=>{
                     <p className="text-sm font-semibold">{0.0001}</p>
                   </div>
                   </div>
-                  <PrimaryButton text="Buy 5 Ticket(5) for 0.05 MATIC"/>
+                  <PrimaryButton onClick={buyTicket} text="Buy 5 Ticket(5) for 0.05 MATIC"/>
                     </div>
                     <div className="flex flex-col space-y-3 border border-white p-2 shadow-sm shadow-lightGray">
                     <h2 className="font-bold text-sm capitalize">You have 8 tickets in this draw</h2>
