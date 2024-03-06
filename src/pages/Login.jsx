@@ -6,6 +6,7 @@ import  ScaleLoader  from 'react-spinners/ScaleLoader';
 import { useState } from 'react'
 import {Toaster}from 'react-hot-toast'
 
+
 const Login = ()=>{
     const [loader,setLoader] = useState(false)
     const auth = useAuth()

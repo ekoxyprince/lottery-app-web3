@@ -7,6 +7,7 @@ import  HashLoader  from 'react-spinners/HashLoader';
 import { useAuth } from "./AuthContext";
 
 
+
 const IsAuth= ({children})=>{
 const auth = useAuth()
 useEffect(()=>{
