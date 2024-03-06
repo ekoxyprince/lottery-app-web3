@@ -1,12 +1,8 @@
+import PropTypes from 'prop-types'
 
-type PrimaryButtonProp = {
-    text:string,
-    onClick:()=>void
-}
-type ButtonProp = {
-    text:string,
-}
-const Button = ({text}:ButtonProp)=>{
+
+
+const Button = ({text})=>{
    return (
     <button className="bg-gradient-to-r from-lightGreen to-heavyGreen px-3 py-1.5 font-bold text-md border-none rounded-md hover:text-lime-400">
            {text}
@@ -15,7 +11,7 @@ const Button = ({text}:ButtonProp)=>{
 }
 export default Button
 
-export const TransparentButton = ({text}:ButtonProp)=>{
+export const TransparentButton = ({text})=>{
     return(
         <button className=" px-3 py-1.5 font-bold text-md border-none rounded-md hover:text-lime-400">
             {text}
@@ -23,7 +19,7 @@ export const TransparentButton = ({text}:ButtonProp)=>{
     )
 }
 
-export const PrimaryButton = ({text,onClick}:PrimaryButtonProp)=>{
+export const PrimaryButton = ({text,onClick})=>{
     return(
         <button onClick={onClick} className="bg-gradient-to-r from-darkOrange to-heavyGreen px-3 py-2.5 font-bold text-md border-none rounded-md hover:text-lime-400">
             {text}
@@ -31,10 +27,26 @@ export const PrimaryButton = ({text,onClick}:PrimaryButtonProp)=>{
     )
 }
 
-export const SecondaryButton = ({text}:ButtonProp)=>{
+export const SecondaryButton = ({text})=>{
     return(
         <button className="bg-gradient-to-r from-lightGreen to-heavyGreen px-3 py-4 font-bold text-md border-none rounded-md hover:text-lime-400">
             {text}
         </button>
     )
 }
+Button.propTypes = {
+    text:PropTypes.any,
+    onClick:PropTypes.func
+  }
+  PrimaryButton.propTypes = {
+      text:PropTypes.any,
+      onClick:PropTypes.func
+  }
+  TransparentButton.propTypes = {
+      text:PropTypes.any,
+      onClick:PropTypes.func
+  }
+  SecondaryButton.propTypes = {
+      text:PropTypes.any,
+      onClick:PropTypes.func
+  }

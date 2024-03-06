@@ -1,7 +1,7 @@
 import img1 from '../../assets/images/img1.jfif'
 import Button,{TransparentButton} from '../ui/Button';
 
-const Navbar:React.FC = ()=>{
+const Navbar = ()=>{
     return(
         <header className="bg-darkGreen px-6 py-4 flex flex-col">
          <nav className="flex justify-between items-center text-white">

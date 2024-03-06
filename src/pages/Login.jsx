@@ -1,16 +1,19 @@
 import img from '../assets/images/img1.jfif'
 import { PrimaryButton } from '../components/ui/Button'
-import { authContextType } from '../types/types'
 import { useAuth } from '../utilities/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import  ScaleLoader  from 'react-spinners/ScaleLoader';
 import { useState } from 'react'
+import web3 from '../services/web3';
 
-const Login:React.FC = ()=>{
+const Login = ()=>{
     const [loader,setLoader] = useState(false)
-    const auth:authContextType = useAuth()
+    const auth = useAuth()
     const navigator = useNavigate()
     function handleLogin (){
+        web3.eth.requestAccounts().then(acc=>{
+            console.log(acc)
+        })
         setLoader(true)
         auth?.login("0xB3bff7...ED705697")
         setTimeout(()=>{

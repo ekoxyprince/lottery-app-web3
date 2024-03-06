@@ -1,18 +1,20 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { createContext,useContext,useState } from "react";
+import PropTypes from 'prop-types'
+
 
 const AuthContext = createContext(null)
 
-export const AuthProvider:React.FC<{children:React.ReactNode}> = ({children})=>{
+export const AuthProvider = ({children})=>{
     const [user,setUser] = useState("")
 
-    const login:(newUser:string)=>void = (newUser)=>{
+    const login = (newUser)=>{
         setUser(newUser)
     } 
-    const logout:()=>void = ()=>{
+    const logout= ()=>{
         setUser("")
     }
-    const value:any = {user,login,logout}
+    const value= {user,login,logout}
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
@@ -21,3 +23,7 @@ export const useAuth = ()=>{
         useContext(AuthContext)
     )
 } 
+AuthProvider.propTypes = {
+    children:PropTypes.node
+  }
+  

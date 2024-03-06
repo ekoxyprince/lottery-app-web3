@@ -1,15 +1,16 @@
-import React from 'react';
+import PropTypes from 'prop-types'
 
-interface MarqueeProps {
-  children: React.ReactNode;
-}
 
-const Marquee: React.FC<MarqueeProps> = ({ children }) => {
+const Marquee = ({ children }) => {
   return (
     <div className="marquee bg-heavyGreen py-2 font-bold text-sm w-[100%]">
       <div className="marquee-content">{children}</div>
     </div>
   );
 };
+Marquee.propTypes = {
+  children:PropTypes.node
+}
+
 
 export default Marquee;

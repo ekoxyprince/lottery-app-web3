@@ -1,6 +1,6 @@
 import Hero from "../components/layout/Hero"
 
-const Home:React.FC = ()=>{
+const Home = ()=>{
 
     return (
       <div>

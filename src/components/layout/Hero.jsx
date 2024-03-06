@@ -4,10 +4,10 @@ import { useState} from "react";
 import {PrimaryButton,SecondaryButton} from "../ui/Button";
 import Marquee from "../ui/Marque";
 
-const Hero:React.FC = ()=>{
+const Hero = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
-  const deadline:string = "23 Feb 2024 23:30:20 UTC"
-  const time:number = Date.parse(deadline) - Date.now()
+  const deadline = "26 Feb 2024 23:30:20 UTC"
+  const time = Date.parse(deadline) - Date.now()
   setTimeout(()=>{
       setTimer(()=>{
        return {
