@@ -4,21 +4,18 @@ import { useAuth } from '../utilities/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import  ScaleLoader  from 'react-spinners/ScaleLoader';
 import { useState } from 'react'
-import web3 from '../services/web3';
+import {Toaster}from 'react-hot-toast'
 
 const Login = ()=>{
     const [loader,setLoader] = useState(false)
     const auth = useAuth()
     const navigator = useNavigate()
-    function handleLogin (){
-        web3.eth.requestAccounts().then(acc=>{
-            console.log(acc)
-        })
-        setLoader(true)
-        auth?.login("0xB3bff7...ED705697")
-        setTimeout(()=>{
-            navigator("/")
-        },1500)
+   async function handleLogin (){
+       setLoader(true)
+      const res =  await auth.login(setLoader)
+      if(res&&typeof res !== 'undefined'){
+        return navigator('/')
+      }
     }
     return (
      <div className='w-[100%] h-[100vh] flex items-center justify-center text-white'>
@@ -35,6 +32,7 @@ const Login = ()=>{
         data-testid="loader"
       />):<PrimaryButton onClick={handleLogin}  text='Login With Metamask'/>}
         </div>
+        <Toaster position='top-center'/>
      </div>
     )
 }
