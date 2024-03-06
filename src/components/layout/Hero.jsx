@@ -6,7 +6,7 @@ import Marquee from "../ui/Marque";
 
 const Hero = ()=>{
   const [timer,setTimer] = useState({h:0,m:0,s:0})
-  const deadline = "26 Feb 2024 23:30:20 UTC"
+  const deadline = "06 Mar 2024 23:30:20 UTC"
   const time = Date.parse(deadline) - Date.now()
   setTimeout(()=>{
       setTimer(()=>{
@@ -49,7 +49,7 @@ function buyTicket(){
                 </div>
             </div>
             </div>
-            <div className="flex flex-col space-y-3 md:flex-row md:space-y-0">
+            <div className="flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-3">
                    <div className="w-[100%] md:w-1/2 flex justify-center max-h-[22rem]">
                     <div className="min-w-[100%] border border-white flex flex-col p-3 space-y-5">
                     <h2 className="text-4xl font-bold text-center">The Next Draw</h2>

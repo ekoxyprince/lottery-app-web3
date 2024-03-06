@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 const AuthContext = createContext(null)
 
 export const AuthProvider = ({children})=>{
-    const [user,setUser] = useState("")
+    const [user,setUser] = useState(null)
 
     const login = (setLoader)=>{
      return  web3.eth.requestAccounts()
@@ -23,7 +23,7 @@ export const AuthProvider = ({children})=>{
     const logout= ()=>{
         
     }
-    const value= {user,login,logout}
+    const value= {user,login,logout,setUser}
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
